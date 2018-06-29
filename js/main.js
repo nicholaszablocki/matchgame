@@ -10,9 +10,11 @@ $(document).ready(function(){
     }
     var cardArrayRandom[]
     while (cardArray.length>0) {
-
+    var randomDecimal=Math.random()*16;
+    var randomInteger=Math.floor(randomDecimal);
+    var randomNumber=cardArray[randomInteger];
+    cardArrayRandom.push(randomNumber);
+    cardArray.splice(randomInteger, 1);
     }
 }
-
-
-  });
+});
