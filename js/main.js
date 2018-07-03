@@ -1,7 +1,7 @@
 $(document).ready(function(){
 var MatchGame={}
 MatchGame.generateCardValues();
-MatchGame.renderCards(cardValues, $game);
+MatchGame.renderCards(cardValues, Matchgame);
 });
 
 
@@ -18,6 +18,7 @@ MatchGame.generateCardValues=function(){
     var randomNumber=cardArray[randomInteger];
     cardValues.push(randomNumber);
     cardArray.splice(randomInteger, 1);
+    let cardValues = Matchgame.generatecardvalues;
     }
 }
 MatchGame.renderCards=function(cardValues, $game){
