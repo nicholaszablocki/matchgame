@@ -35,25 +35,28 @@ MatchGame.renderCards=function(cardValues, $game){
   $("#game").empty();
   var i;
   for (i=0, i>cardValues.length, i++){
-    var $newCard=$('<div class="col-xs-3 card"><p>""</p></div>');
+    var $newCard=$('<div class="col-xs-3 card">""</div>');
     $newCard.data(value, cardValues[i]);
     $newCard.data(flipped, false);
     $newCard.data(color,colors[cardValues[i]-1])
     $game.append($newCard)
   }
+  $newCard.click( function(){
+    $(this).flipcard($newCard, $game)
+  })
 }
 MatchGame.flipcard=function($newCard, $game){
-  if ($(this).data(flipped)) = true){
+  if ($newCard.data(flipped) = true){
     return;
   }
   else{
-    $(this).data(flipped, true);
-    $(this).css(background-color, color);
-    $(this>"p").text(value);
-    flippedCards.push($(this));
+    $newCard.data(flipped, true);
+    $newCard.css(background-color, color);
+    $newCard.text( $newCard.data('value'));
+    flippedCards.push($newCard);
     if (flippedCards.length==2){
-        var x = flippedCards[0].data(value);
-        var y = flippedCards[1].data(value);
+        var x = flippedCards[0].data('value');
+        var y = flippedCards[1].data('value');
         if (x==y){
           (flippedCards[0].css(background-color, rgb(153, 153, 153));
           (flippedCards[1].css(background-color, rgb(153, 153, 153));
@@ -65,7 +68,7 @@ MatchGame.flipcard=function($newCard, $game){
           (flippedCards[0].text(<p>""</p>)
           (flippedCards[1].css(background-color, rgb(32, 64, 86);
           (flippedCards[1].data(flipped, false);
-          (flippedCards[1].text(<p>""</p>)/*HOW DO I GET IT TO SELECT VALUE????*/
+          (flippedCards[1].text("")
           $game.data(flippedCards, []);
         }
     }
