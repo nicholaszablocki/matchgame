@@ -1,7 +1,8 @@
+var MatchGame={};
 $(document).ready(function(){
-var MatchGame={}
-MatchGame.generateCardValues();
-MatchGame.renderCards(cardValues, Matchgame);
+  var $game = $('#game');
+  var values = MatchGame.generateCardValues();
+  MatchGame.renderCards(cardValues, $game);
 });
 
 
