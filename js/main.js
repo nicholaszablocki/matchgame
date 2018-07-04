@@ -16,7 +16,7 @@ MatchGame.generateCardValues=function(){
     }
     var cardValues=[];
     while (cardArray.length>0) {
-    var randomInteger=Math.floor(Math.random()*16);
+    var randomInteger=Math.floor(Math.random()*cardArray.length);
     var randomNumber=cardArray[randomInteger];
     cardValues.push(randomNumber);
     cardArray.splice(randomInteger, 1)
@@ -36,7 +36,7 @@ MatchGame.renderCards=function(cardValues, $game){
             "hsl(310, 85%, 65%)",
             "hsl(360, 85%, 65%)",
           ];
-  $("#game").empty();
+  $game.empty();
   var i;
   for (i=0; i>cardValues.length; i++){
     var $newCard=$('<div class="col-xs-3 card"></div>');
@@ -45,8 +45,8 @@ MatchGame.renderCards=function(cardValues, $game){
     $newCard.data(color,colors[cardValues[i]-1])
     $game.append($newCard)
   };
-  $newCard.click( function(){
-    MatchGame.flipcard($(this), $('#game'));
+  $('card').click( function(){
+    MatchGame.flipcard($(this), $game);
   });
 };
 MatchGame.flipcard=function($newCard, $game){
