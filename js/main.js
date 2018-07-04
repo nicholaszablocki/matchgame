@@ -40,12 +40,12 @@ MatchGame.renderCards=function(cardValues, $game){
   var i;
   for (i=0; i>cardValues.length; i++){
     var $newCard=$('<div class="col-xs-3 card"></div>');
-    $newCard.data(value, cardValues[i]);
-    $newCard.data(flipped, false);
-    $newCard.data(color,colors[cardValues[i]-1])
-    $game.append($newCard)
+    $newCard.data('value', cardValues[i]);
+    $newCard.data('flipped', false);
+    $newCard.data('color', colors[cardValues[i]-1]);
+    $game.append($newCard);
   };
-  $('card').click( function(){
+  $('.card').click( function(){
     MatchGame.flipcard($(this), $game);
   });
 };
