@@ -1,6 +1,7 @@
 var MatchGame={};
 $(document).ready(function(){
   var $game = $('#game');
+  var $newCard =$('card');
   var cardValues = MatchGame.generateCardValues();
   MatchGame.renderCards(cardValues, $game);
 });
@@ -44,7 +45,7 @@ MatchGame.renderCards=function(cardValues, $game){
     $newCard.data(color,colors[cardValues[i]-1])
     $game.append($newCard)
   };
-  $(newCard).click( function(){
+  $newCard.click( function(){
     MatchGame.flipcard($(this), $('#game'));
   });
 };
